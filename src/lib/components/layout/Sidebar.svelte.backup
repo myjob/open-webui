@@ -785,27 +785,6 @@
 						</Tooltip>
 					</div>
 				{/if}
-					<div class="">
-						<Tooltip content={$i18n.t('Celex ID')} placement="right">
-							<a
-								class=" cursor-pointer flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-850 transition group"
-								href="/celex_id"
-								on:click={async (e) => {
-									e.stopImmediatePropagation();
-									e.preventDefault();
-
-									goto('/celex_id');
-									itemClickHandler();
-								}}
-								draggable="false"
-								aria-label={$i18n.t('Celex ID')}
-							>
-								<div class=" self-center flex items-center justify-center size-9">
-									<DocumentChartBar className="size-4.5" />
-								</div>
-							</a>
-						</Tooltip>
-					</div>
 			</div>
 		</button>
 
@@ -1037,24 +1016,6 @@
 							</a>
 						</div>
 					{/if}
-					<div class="px-[0.4375rem] flex justify-center text-gray-800 dark:text-gray-200">
-						<a
-							id="sidebar-celex-id-button"
-							class="grow flex items-center space-x-3 rounded-2xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition"
-							href="/celex_id"
-							on:click={itemClickHandler}
-							draggable="false"
-							aria-label="Celex ID"
-						>
-							<div class="self-center">
-								<DocumentChartBar className="size-4.5" strokeWidth="2" />
-							</div>
-
-							<div class="flex self-center translate-y-[0.5px]">
-								<div class=" self-center text-sm font-primary">Celex ID</div>
-							</div>
-						</a>
-					</div>
 				</div>
 
 				{#if ($models ?? []).length > 0 && (($settings?.pinnedModels ?? []).length > 0 || $config?.default_pinned_models)}
